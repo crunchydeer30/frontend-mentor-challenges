@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: hsl(235, 18%, 26%);
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: hsl(234, 29%, 20%);
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 2.75rem;
+}
+
+.btn {
+  display: block;
+  background: hsl(234, 29%, 20%);
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: linear-gradient(130deg, #ff5078, #ed6d43);
+  box-shadow: #ec7f88 0px 10px 20px 0px;
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: #ec7f88 0px 5px 15px 0px;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 2rem;
+}
+
+.sign-up {
+  width: 900px;
+  display: flex;
+  gap: 2rem;
+  padding: 1.5rem;
+  position: absolute;
+}
+
+.sign-up--active {
+  display: none;
+  transform: scale(0);
+}
+
+.sign-up-bg {
+  background-image: url(./images/illustration-sign-up-desktop.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.sign-up-form {
+  display: flex;
+  flex: 0 0 50%;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 4rem 2rem;
+}
+
+.sign-up-form__feature {
+  display: flex;
+  align-items: center;
+}
+
+.sign-up-form__feature:not(:last-child) {
+  margin-bottom: 0.65rem;
+}
+
+.sign-up-form__feature::before {
+  display: block;
+  content: url('./images/icon-list.svg');
+  margin-right: 0.8rem;
+}
+
+.sign-up-form__email {
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-up-form__email input {
+  display: block;
+  width: 100%;
+  padding: 1rem 1.2rem;
+  font-size: 0.9rem;
+  border: 1px solid hsl(231, 7%, 60%);
+  border-radius: 0.4rem;
+  order: 1;
+}
+
+.sign-up-form__email input:autofill {
+  background: black;
+}
+
+.sign-up-form__email-label {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.sign-up-form__email-label--invalid {
+  color: #ff6257;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: .2s;
+}
+
+.sign-up-form__email input:focus {
+  border: 1px solid #000;
+  outline: none;
+}
+
+.sign-up-form__email input:not(:placeholder-shown):invalid {
+  border-color: #ff6257;
+  color: #ff6257;
+  background-color: #ff625750;
+}
+
+.sign-up-form__email
+  input:not(:placeholder-shown):invalid
+  ~ .sign-up-form__email-label
+  .sign-up-form__email-label--invalid {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.success {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 3rem;
+  background-color: #fff;
+  border-radius: 2rem;
+  opacity: 0;
+  transform: translateY(200px);
+  transition: .5s;
+  position: absolute;
+  pointer-events: none;
+}
+
+.success--active {
+  transform: translateY(0);
+  display: flex;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.success__icon {
+  height: 3rem;
+  width: 3rem;
+}
