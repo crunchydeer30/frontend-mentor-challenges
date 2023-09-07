@@ -77,13 +77,13 @@ h1 {
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
+  flex: 0 0 50%;
   overflow: hidden;
   border-radius: 1rem;
 }
 
 .sign-up-form {
   display: flex;
-  flex: 0 0 50%;
   flex-direction: column;
   gap: 2rem;
   padding: 4rem 2rem;
@@ -135,7 +135,7 @@ h1 {
   color: #ff6257;
   opacity: 0;
   transform: translateY(4px);
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .sign-up-form__email input:focus {
@@ -167,7 +167,7 @@ h1 {
   border-radius: 2rem;
   opacity: 0;
   transform: translateY(200px);
-  transition: .5s;
+  transition: 0.5s;
   position: absolute;
   pointer-events: none;
 }
@@ -182,4 +182,94 @@ h1 {
 .success__icon {
   height: 3rem;
   width: 3rem;
+}
+
+.dismiss_btn {
+  margin-top: 2rem;
+}
+
+@media only screen and (max-width: 900px) {
+  main {
+    background-color: #fff;
+    justify-content: flex-start;
+  }
+
+  .container {
+    width: 100vw;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .btn {
+    padding: 1.25rem;
+    font-size: 1rem;
+    transition: none;
+  }
+  
+  .btn:hover, .btn:active {
+    background: linear-gradient(130deg, #ff5078, #ed6d43);
+  }
+
+  .sign-up {
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+  }
+
+  .sign-up-form {
+    height: 100%;
+    padding: 2rem 1.5rem;
+    order: 1;
+    gap: 2rem;
+    flex: 1;
+  }
+
+  .sign-up-bg {
+    order: 0;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 0 0 1rem 1rem;
+    flex: 0 0 30vh;
+  }
+
+  .sign-up-form__email {
+    margin-top: 1rem;
+  }
+
+  .sign-up-form__email label {
+    font-size: .9rem;
+  }
+
+  .sign-up-form__email input {
+    padding: 1.25em;
+    font-size: 1rem;
+  }
+
+  .sign-up-form__submit {
+    margin-top: auto;
+  }
+
+  .success {
+    height: 100vh;
+    padding: 2.5rem 1.75rem;
+    padding-top: 20vh;
+    justify-items: center;
+    transform: translateY(0) translateX(100%);
+    position: static;
+    justify-content: center;
+    transition: .4s;
+  }
+
+  .success__icon {
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .success--active {
+    transform: translateY(0) translateX(0);
+  }
+  
+  .dismiss_btn {
+    margin-top: auto;
+  }
 }
