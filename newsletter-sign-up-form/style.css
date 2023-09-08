@@ -199,6 +199,10 @@ h1 {
 }
 
 @media only screen and (max-width: 900px) {
+  body {
+    overflow-y: visible;
+  }
+
   main {
     background-color: white;
     justify-content: flex-start;
